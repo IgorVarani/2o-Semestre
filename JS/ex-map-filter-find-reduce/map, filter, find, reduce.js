@@ -101,3 +101,30 @@ const contagem = palavras.reduce((acumulador, palavra) =>
     acumulador[palavra] = (acumulador[palavra] || 0) + 1;
     return acumulador;
 }, {});
+
+//! Calcular média de notas
+const notas = [7, 8, 9, 6, 10];
+
+const media = notas.reduce((total, nota) => total + nota, 0) / notas.length;
+console.log(media);
+
+//*USO COMBINADO
+const usuarios =
+[
+    {nome: "Alice", idade: 25},
+    {nome: "Bob", idade: 30},
+    {nome: "Carol", idade: 20},
+]
+
+const usuariosMaioresQ21 = usuarios.filter(usuario => usuario.idade > 21); //Filtra usuários com mais de 21 anos
+
+const usuarioIdade = usuarios.find(usuario => usuario.idade > 21); //Encontra o primeiro usuário com mais de 21 anos
+
+const nomesUsuarios = usuarios.map(usuario => usuario.nome); //Cria um array apenas com os nomes dos usuários
+
+const somaIdades = usuarios.reduce((total, usuario) => total + usuario.idade, 0); //Soma todas as idades dos usuários usando o reduce
+
+console.log("Maiores de idade: ", usuariosMaioresQ21);
+console.log("Primeiro maior de idade: ", usuarioIdade);
+console.log("Nomes dos usuários: ", nomesUsuarios);
+console.log("Soma das idades: ", somaIdades);
